@@ -2,7 +2,7 @@ import { Router } from "express";
 import { Role } from "../../../generated/prisma/enums";
 
 import { commentController } from "./comment.controller";
-import { auth } from "../../middleware/auth";
+import { auth } from "../../middlewares/auth";
 
 const router = Router();
 
@@ -14,7 +14,7 @@ router.post(
 
 router.get("/author/:authorId", commentController.getCommentByAuthorId);
 
-router.get("/:commentId", commentController.getCommentByCommentId);
+router.get("/:postId", commentController.getCommentByPostId);
 
 router.patch(
   "/:commentId",
